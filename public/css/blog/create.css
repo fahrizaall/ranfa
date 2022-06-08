@@ -1,0 +1,74 @@
+.container {
+  padding: 5rem 8rem;
+  /* height: calc(100vh - 10rem); */
+  height: fit-content;
+  background-color: lightgray;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container h1 {
+  font-size: 3rem;
+}
+
+form .input {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, textarea{
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid darkslategray;
+}
+
+form input:focus, textarea:focus, select:focus{
+  border: none;
+  outline: none;
+  text-decoration: none;
+  border-bottom: 1px solid darkslategray;
+}
+
+form .input label {
+  margin-bottom: 0.2rem;
+}
+
+form .input input, textarea {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+form .input input[type='text']{
+  height: 3rem;
+  font-size: 3rem;
+}
+
+form .input select{
+  width: fit-content;
+  padding: 0.6rem 0.8rem;
+  margin: 0.2rem 0 1rem 0;
+  background-color: lightgray;
+  border: 1px solid darkslategray;
+  color: darkslategray;
+} 
+
+form .input .upload-btn{
+  width: fit-content;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1rem;
+  /* border-radius: 0.5rem; */
+  /* box-shadow: 1px 1px 5px 0.5px gray; */
+  background-color: lightgray;
+  border: 1px solid darkslategray;
+  color: darkslategray;
+}
+
+form .input button {
+  width: fit-content;
+  padding: 0.8rem 2.5rem;
+  margin: 1rem 0;
+  border-radius: 0rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #0091cf;
+  border: none;
+}
