@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -28,11 +29,11 @@ class PostsController extends Controller
      * @param  string  $category
      * @return \Illuminate\Http\Response
      */
-    public function category($category)
+    public function category($category, $category_id)
     {
-        // dd($category);
+        // dd($category_id);
         return view('blog.category')
-            ->with('posts', Post::where('category', $category)->get())
+            ->with('posts', Post::where('category_id', $category_id)->get())
             ->with('category', $category);
             // ->with('posts', Post::where('category', $category)::orderBy('updated_at', 'DESC')->get());
             // ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
@@ -46,7 +47,9 @@ class PostsController extends Controller
     public function create()
     {
         if (Auth::check()) {
-            return view('blog.create');
+            // return view('blog.tes');
+            return view('blog.create')
+                ->with('categories', Category::all());
         } else return redirect('/login');
     }
 
@@ -73,9 +76,9 @@ class PostsController extends Controller
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
-            'category' => $request->input('category'),
             'image_path' => $newImageName,
-            'user_id' =>  auth()->user()->id
+            'user_id' =>  auth()->user()->id,
+            'category_id' => $request->input('category'),
         ]);
 
         return redirect('/')

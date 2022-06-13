@@ -16,6 +16,7 @@ h1{
 }
 
 .post-content {
+  /* background-color: white; */
   display: flex;
   width: 100%;
 }
@@ -35,5 +36,7 @@ h1{
 }
 .post-content .detail p{
   color: gray;
+  max-height: 6.5rem;
+  overflow-y: hidden;
 }
 

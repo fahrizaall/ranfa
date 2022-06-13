@@ -24,12 +24,12 @@
     <section id="category">
       <h2>Category</h2>
       <div class="category-list">
-        @foreach ($posts as $post)
+        @foreach ($categories as $category)
             
-          <a href="{{'blog/category/' . $post->category}}" class="">
+          <a href="{{'blog/category/' . $category->name . '/' . $category->id}}" class="">
             <div class="category-content">
               <img src="{{url('images/pavan-gupta-_HzlOHmboSk-unsplash.jpg')}}" alt="">
-              <p>{{$post->category}}</p>
+              <p>{{$category->name}}</p>
             </div>
           </a>
 

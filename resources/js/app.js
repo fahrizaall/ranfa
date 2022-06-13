@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+import './libs/trix.js';
 
 window.Vue = require('vue').default;
 

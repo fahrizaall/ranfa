@@ -29,10 +29,9 @@
         <label for="category">Add Category:</label>
 
         <select name="category" id="category">
-          <option value="budaya">Budaya</option>
-          <option value="MakananDanMinuman">Makanan dan Minuman</option>
-          <option value="sejarah">Sejarah</option>
-          <option value="teknologi">Teknologi</option>
+          @foreach ($categories as $category)
+            <option value={{$category->id}}>{{$category->name}}</option>
+          @endforeach
         </select>
 
         <label for="image" class="upload-btn">Select Image</label>

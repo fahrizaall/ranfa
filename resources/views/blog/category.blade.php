@@ -14,7 +14,7 @@
           <img src="{{ url('images/' . $post->image_path) }}" alt="">
           <div class="detail">
             <span>by {{ $post->user->name }} | {{ date('jS M Y', strtotime($post->updated_at)) }}</span>
-            <a href="{{ 'blog/' . $post->category }}">
+            <a href="{{ '/blog' . '/' . $post->slug }}">
               <h2>{{ $post->title }}</h2>
             </a>
             <p class="desc">{{ $post->description }}</p>
@@ -26,9 +26,9 @@
       </div>
   </main>
 
-  <footer>
+  {{-- <footer>
     <p>created </p>
-  </footer>
+  </footer> --}}
 
   <script>
     function myFunction() {

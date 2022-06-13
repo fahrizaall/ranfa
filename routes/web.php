@@ -3,6 +3,7 @@
 use App\Http\Controllers\MoreController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, 'index']);
-Route::get('/category/{category}', [PostsController::class, 'category']);
+// Route::get('/blog/category/{category}', function($category) {return dd($category);});
+Route::get('/blog/category/{category}/{category_id}', [PostsController::class, 'category']);
 Route::resource('/blog', PostsController::class);
 
-// Route::get('/category/{$category}', function() {return view('blog.category');});
 // Route::get('/blog/category/{category}', ['as'=>'blog.category','uses'=>'PostsController@category']);
 
 // Route::get('/', function () { return view('home'); });
